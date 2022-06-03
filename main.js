@@ -1,11 +1,11 @@
 import './style.css'
 import Alpine from 'alpinejs'
+import {LoveCounter} from './love-counter';
+
 
 window.Alpine = Alpine
 
+Alpine.data('loveCounter', LoveCounter);
+
 Alpine.start()
 
-document.querySelector('#app').innerHTML = `
-  <h1>I love Vite</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`

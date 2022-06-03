@@ -9,5 +9,13 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/main.js"></script>
+    <div x-data="loveCounter" >
+      <h1>Show some heart</h1>
+      <div x-text="hearts()" >
+      </div>
+      <div>
+          <button @click="love" >Show 💟</button>
+      </div>
+    </div>
   </body>
 </html>
