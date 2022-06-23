@@ -1,14 +1,6 @@
 export function LoveCounter() {
     return {
       loveCounter : 0,
-      init() {
-        setInterval( () => {
-          if (loveCounter > 0) {
-            this.loveCounter--;
-          }
-         console.log(this.loveCounter)
-        }, 3000)
-      },
       love() {
        this.loveCounter++
       },
@@ -25,6 +17,7 @@ export function LoveCounter() {
          } else {
            return "💚💚💚";
          }
-      }
+      }, 
+      
     }
 }
