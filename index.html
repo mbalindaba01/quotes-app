@@ -12,20 +12,20 @@
     <script type="module" src="login.js"></script>
 
     <div x-data="loveCounter" >
-      <div class="login" x-data="{show: true}">
+      <div class="login">
         <div class="container" x-data="login">
-          <section class="login" x-show="show">
+          <section class="login" x-show="!revealContent()">
             <input type="text" name="username" id="username1" placeholder="username" x-model="username1">
             <input type="password" name="password" id="password1" placeholder="password" x-model="password1">
-            <button type="submit" @click="show=!show; loginCred()">Login</button>
+            <button type="submit" @click="revealContent(); loginCred()">Login</button>
   
             <br>
             <input type="text" name="username" id="username2" placeholder="username" x-model="username2">
             <input type="password" name="password" id="password2" placeholder="password" x-model="password2">
-            <button type="submit" @click="show=!show; regCred();">Register</button>
+            <button type="submit" @click="revealContent(); regCred();">Register</button>
           </section>
           
-          <div class="hearts" x-show="loginCred">
+          <div class="hearts" x-show="revealContent()">
             <div x-text="getFeedbackText"></div>
             <div class="show-toggle">
               <h1>Show some heart</h1>

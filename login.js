@@ -6,6 +6,7 @@ export default function Login(){
         password2: '',
         userCredentials: JSON.parse(localStorage.getItem('creds')) || [],
         feedbackText: '',
+        showContent: false,
 
         getUsername(){
             console.log(this.username1)
@@ -40,6 +41,7 @@ export default function Login(){
             if(loginItem){
                 if(loginItem.password == this.setLoginCredentials().password){
                     this.feedbackText = 'Successful Login'
+                    this.showContent = true
                 }else {
                     this.feedbackText = 'Incorrect password'
                 }
@@ -70,6 +72,7 @@ export default function Login(){
             if(regItem){
                this.feedbackText = 'User already registered. Please login'
             }else{
+                this.showContent = true
                 this.userCredentials.push(this.setRegCredentials())
                 localStorage.setItem('creds', JSON.stringify(this.userCredentials))
                 this.feedbackText = 'Successfully registered'
@@ -83,6 +86,11 @@ export default function Login(){
             //         console.log('Username not recognised. Please try again or register')
             //     }
             // }
+        },
+
+        revealContent(){
+            console.log(this.showContent)
+            return this.showContent
         },
 
         loveCounter : 0,
